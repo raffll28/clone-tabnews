@@ -29,11 +29,6 @@ function Home() {
           </li>
           <li>
             <a href="#" style={{ color: "white", textDecoration: "none" }}>
-              Sobre
-            </a>
-          </li>
-          <li>
-            <a href="#" style={{ color: "white", textDecoration: "none" }}>
               Contato
             </a>
           </li>
