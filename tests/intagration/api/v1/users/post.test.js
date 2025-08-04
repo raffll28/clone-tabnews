@@ -10,11 +10,6 @@ beforeAll(async () => {
 describe("POST /api/v1/users", () => {
   describe("Anonymus user", () => {
     test("with unique and valid data", async () => {
-      // await database.query({
-      //   text: "INSERT INTO users (username,email,password) VALUES ($1,$2,$3);",
-      //   values: ["RafaelCazoto", "raffll1337@gmail.com", "senha123"],
-      // });
-
       const response = await fetch("http://localhost:3000/api/v1/users", {
         method: "POST",
         headers: {
