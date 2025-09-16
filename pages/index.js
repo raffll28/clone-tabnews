@@ -21,7 +21,7 @@ function Home() {
         }}
       >
         <h2>Menu</h2>
-        <ul style={{ listStyle: "none", padding: 0 }}>
+        <ul style={{ listStyle: "none", padding: 1 }}>
           <li>
             <a href="#" style={{ color: "white", textDecoration: "none" }}>
               Home
