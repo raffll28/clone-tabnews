@@ -4,6 +4,7 @@ import { faker } from "@faker-js/faker";
 import database from "infra/database";
 import migrator from "models/migrator.js";
 import user from "models/user";
+import session from "models/session";
 
 async function waitForAllServices() {
   await waitForWebServices();
@@ -14,8 +15,7 @@ async function waitForAllServices() {
       maxTimeout: 1000,
     });
 
-    async function fetchStatusPage(bail, tryNumber) {
-      console.log(tryNumber);
+    async function fetchStatusPage() {
       const response = await fetch("http://localhost:3000/api/v1/status");
 
       if (response.status !== 200) {
@@ -42,11 +42,16 @@ async function createUser(userObject) {
   });
 }
 
+async function createSession(userID) {
+  return await session.create(userID);
+}
+
 const orchestrator = {
   waitForAllServices,
   clearDatabase,
   runPendingMigrations,
   createUser,
+  createSession,
 };
 
 export default orchestrator;
